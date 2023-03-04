@@ -77,3 +77,14 @@
 #card-info-btn {
   font-size: 1.3em;
 }
+@font-face {
+  font-family: 'tzy';
+/* 字体名自定义即可 */
+  src: url("../_fonts/ZhuZiAWan.woff2");
+/* 字体文件路径 */
+  font-display: swap;
+}
+body,
+.gitcalendar {
+  font-family: tzy !important;
+}
