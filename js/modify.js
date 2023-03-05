@@ -2,7 +2,7 @@
 
 
 'use strict';
-const cheerio = require('cheerio');
+import cheerio from './cheerio';
 
 /**
  * 在页面插入新顶部图
@@ -12,6 +12,7 @@ function insertTopImg($) {
     let header = $('#page-header');
     if (header.length === 0) return;
     let background = header.css('background-image');
+    console.log(background)
     if (!background) return;
     $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);
 }
