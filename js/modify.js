@@ -1,26 +1,16 @@
 
 
 
-'use strict';
-import cheerio from './cheerio';
+function InsertTopImage()
+{
+    var TopImage = document.querySelector("#page-header").style.backgroundImage
+    var Element = document.createElement('div');
+    Element.classList.add('top-img');
+    Element.style.cssText = `background-image: ${TopImage}`
+    
+    document.querySelector("#post").insertBefore(Element, document.querySelector("#article-container"))
 
-/**
- * 在页面插入新顶部图
- * @param {cheerio.Root} $ Root
- */
-function insertTopImg($) {
-    let header = $('#page-header');
-    if (header.length === 0) return;
-    let background = header.css('background-image');
-    console.log(background)
-    if (!background) return;
-    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);
 }
 
-hexo.extend.filter.register('after_render:html', function(str, data) {
-    let $ = cheerio.load(str, {
-        decodeEntities: false
-    });
-    insertTopImg($);
-    return $.html();
-});
+
+InsertTopImage()
