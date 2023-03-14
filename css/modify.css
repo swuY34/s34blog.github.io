@@ -181,3 +181,7 @@ div.post-qr-code-desc {
   font-size: 1.5em;
   color: rgba(57,197,188,0.736) !important;
 }
+button#go-up #scroll-percent {
+  font-weight: 700;
+  font-size: 15px !important;
+}
