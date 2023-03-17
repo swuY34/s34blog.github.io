@@ -195,5 +195,8 @@ button#go-up:hover .scroll-percent {
 }
 /* 更改评论框高度 */
 .el-textarea__inner {
-  height: 120px;
+  min-height: 120px !important;
+  max-height: 500px !important;
+  height: 120px !important;
+  padding-top: 10px !important;
 }
